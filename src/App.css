@@ -1,3 +1,43 @@
+
+
+
+
+.App {
+  text-align: center;
+  margin: 20px;
+  background-color: #f2f2f2; /* Background color for the entire component */
+  border-radius: 10px; /* Border radius for the entire component */
+  padding: 20px; /* Add padding to the component */
+}
+
+h1 {
+  font-size: 24px;
+}
+
+.button {
+  background-color: #2ca977;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 20%;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.button:hover {
+  background-color: #22b49e; /* Change color on hover */
+  transform: scale(1.05); /* Slight scale increase on hover */
+}
+
+.button:active {
+  background-color: #004193; /* Change color on click */
+  transform: scale(0.95); /* Slight scale decrease on click */
+}
+
+
+
+
+
 .App {
   text-align: center;
 }

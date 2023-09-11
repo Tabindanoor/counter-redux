@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+
 import './App.css';
+import { useSelector } from 'react-redux/es/hooks/useSelector';
+import { useDispatch } from 'react-redux';
+import { Increment, Decrement, Loggedin } from './redux/actions/Actionperform';
 
 function App() {
+  const counter = useSelector(state=>state.counter)
+  const loggedin = useSelector(state=>state.loggedin);
+  const dispatch = useDispatch()
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Redux Increment Decrement Counter </h1>
+      <button className='button' onClick={()=>dispatch(Increment(5))}>Increment</button>
+      <h1>{counter}</h1>
+      <button className='button' onClick={()=>dispatch(Decrement())}>Decrement</button>
+      <br />
+      <h1 onClick={()=>dispatch(Loggedin())}>LOG IN</h1>
+      {loggedin ?  "only show when logged in " : ""}
     </div>
   );
 }
